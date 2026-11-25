@@ -47,4 +47,10 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Update public GitHub overview'
+          if ! git diff --quiet HEAD^ HEAD -- assets/top-contributors.svg; then
+            chart_commit=$(git rev-parse HEAD)
+            sed -i -E "s|@[a-f0-9]{40}/assets/top-contributors.svg|@${chart_commit}/assets/top-contributors.svg|" profile/README.md
+            git add profile/README.md
+            git commit -m 'Refresh contributor chart link'
+          fi
           git push origin HEAD:main
