@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="76" viewBox="0 0 760 76" role="img" aria-labelledby="title">
+<title id="title">TRI Cybersecurity Community</title>
+<defs><clipPath id="reveal"><rect x="72" y="0" width="616" height="76"><animate attributeName="width" values="0;616;616" keyTimes="0;0.55;1" dur="6s" repeatCount="indefinite"/></rect></clipPath></defs>
+<rect width="760" height="76" rx="9" fill="#171a29"/>
+<g clip-path="url(#reveal)"><text x="380" y="50" text-anchor="middle" font-family="monospace" font-size="34" font-weight="bold" fill="#82aaff">TRI Cybersecurity Community</text></g></svg>

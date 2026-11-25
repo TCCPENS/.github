@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="106" viewBox="0 0 500 106" role="img" aria-labelledby="title description">
+  <title id="title">TCC PENS GitHub overview</title>
+  <desc id="description">Public repositories: 6. Source repositories: 5. Forked repositories: 1. Total stars: 0. Forks received: 1. Primary languages by repository count. Python: 3. Jinja: 1. Rust: 1.</desc>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .panel { fill: #171a29; stroke: #353b56; }
+      .divider { stroke: #353b56; }
+      .primary { fill: #82aaff; }
+      .secondary { fill: #c0caf5; }
+    }
+  </style>
+  <rect class="panel" x="0.5" y="0.5" width="499" height="105" rx="6" fill="#171a29" stroke="#353b56"/>
+  <path class="divider" d="M242 14V92" stroke="#353b56"/>
+  <g font-family="system-ui, sans-serif" font-size="14">
+    <g class="primary" fill="#82aaff" font-weight="600">
+      <text x="16" y="27">6 public repositories</text>
+      <text x="258" y="27">Top languages</text>
+    </g>
+    <g class="secondary" fill="#c0caf5" font-size="13">
+      <text x="16" y="53">Source: 5 · Forked: 1</text>
+      <text x="16" y="76">Stars: 0 · Forks received: 1</text>
+      <text x="258" y="49">Python</text>
+      <text x="484" y="49" text-anchor="end">3</text>
+      <text x="258" y="68">Jinja</text>
+      <text x="484" y="68" text-anchor="end">1</text>
+      <text x="258" y="87">Rust</text>
+      <text x="484" y="87" text-anchor="end">1</text>
+    </g>
+  </g>
+</svg>

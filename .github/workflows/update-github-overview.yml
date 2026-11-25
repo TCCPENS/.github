@@ -1,0 +1,50 @@
+name: Update GitHub overview
+
+on:
+  schedule:
+    - cron: "23 1 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-github-overview.yml
+      - scripts/render_github_overview.py
+      - scripts/render_contributions.py
+      - scripts/update_contributors.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-overview
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'TCCPENS/.github' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: main
+      - name: Generate statistics and language cards
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --paginate --slurp 'orgs/TCCPENS/repos?type=public&per_page=100' > "$RUNNER_TEMP/repos.json"
+          python3 scripts/render_github_overview.py < "$RUNNER_TEMP/repos.json"
+          python3 scripts/render_contributions.py < "$RUNNER_TEMP/repos.json"
+          python3 scripts/update_contributors.py < "$RUNNER_TEMP/repos.json"
+      - name: Commit updated cards
+        shell: bash
+        run: |
+          git add assets/top-contributors.svg assets/org-stats.svg assets/org-languages.svg assets/weekly-activity.svg assets/snake.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update public GitHub overview'
+          git push origin HEAD:main
