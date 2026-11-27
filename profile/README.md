@@ -26,7 +26,7 @@ The overview covers our public repositories. Languages are ranked by the number 
 
 Ranked by commits GitHub attributes to individual accounts across the organization’s public, non-fork repositories. Counts refresh daily.
 
-<p align="center"><img width="750" src="https://cdn.jsdelivr.net/gh/TCCPENS/.github@59b45bc9b09e57e986adcd8e12a38c808ffbac48/assets/top-contributors.svg" alt="Top contributors ranked by commit count"></p>
+<p align="center"><img width="750" src="https://cdn.jsdelivr.net/gh/TCCPENS/.github@fb5c36c3980e96936f06af17cc26b4411e1aa76b/assets/top-contributors.svg" alt="Top contributors ranked by commit count"></p>
 
 ## 📈 Contribution Graph
 
